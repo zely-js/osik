@@ -1,4 +1,4 @@
-import type { createServer, IncomingMessage, ServerResponse } from 'http';
+import type { createServer, IncomingMessage, Server, ServerResponse } from 'http';
 
 export interface Request extends IncomingMessage {
   body: any;
@@ -34,3 +34,21 @@ export interface ServerOptions {
 }
 
 export interface ServerConstructorOptions extends ServerOptions {}
+
+export interface OsikServer {
+  options: ServerOptions;
+
+  middlewares: Middleware[];
+
+  server: Server;
+
+  constructor(options?: ServerConstructorOptions);
+
+  use(...middlewares: Middleware[]): this;
+
+  listen(port: number, callback?: () => void | Promise<void>): this;
+
+  handle(req: IncomingMessage, res: ServerResponse): void;
+}
+
+export function osik(options?: ServerConstructorOptions): OsikServer;

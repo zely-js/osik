@@ -1,4 +1,4 @@
-import { ServerConstructorOptions } from '$core/types';
+import { ServerConstructorOptions } from '$osik/types';
 
 import { OsikServer } from './server';
 

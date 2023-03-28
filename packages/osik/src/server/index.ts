@@ -1,6 +1,6 @@
 import { IncomingMessage, Server, ServerResponse } from 'http';
 
-import { Middleware, ServerConstructorOptions, ServerOptions } from '$core/types';
+import { Middleware, ServerConstructorOptions, ServerOptions } from '$osik/types';
 
 import { defaultServer } from './default';
 

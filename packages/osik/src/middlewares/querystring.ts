@@ -1,7 +1,6 @@
 import url from 'url';
-
-import { Middleware } from '$core/types';
-import { queryToJson } from '$core/lib/querytojson';
+import { Middleware } from '$osik/types';
+import { queryToJson } from '$osik/lib/querytojson';
 
 /*
 
