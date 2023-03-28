@@ -4,6 +4,8 @@ osik is a nodejs backend framework centered on performance and weight.
 
 Inspired by koa, only middleware is supported by default, but the handler of this framework is inspired by express, not koa. The concept of middleware is similar to express.
 
+> This package is a modified version of [sard](https://prext.netlify.app/guide/pkg-sard).
+
 ---
 
 ```ts
