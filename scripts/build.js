@@ -55,4 +55,4 @@ const build = (
   }
 };
 
-build('core');
+build('osik');
