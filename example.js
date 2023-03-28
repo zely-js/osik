@@ -1,4 +1,4 @@
-const m = require('./packages/core/dist');
+const m = require('./packages/osik/dist');
 
 const app = m.osik();
 
