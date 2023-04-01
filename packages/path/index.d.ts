@@ -1,4 +1,4 @@
 export function pathToRegexp(
   path: string,
-  loose: boolean
+  loose?: boolean
 ): { params: string[]; pattern: RegExp };
