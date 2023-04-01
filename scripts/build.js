@@ -56,3 +56,6 @@ const build = (
 };
 
 build('osik');
+build('static');
+build('path');
+build('router');
