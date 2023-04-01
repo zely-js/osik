@@ -1,10 +1,11 @@
 {
   "name": "@osik/router",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "express-style router for osik",
   "types": "./index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
+  "homepage": "https://github.com/do4ng/osik",
   "files": [
     "index.d.ts",
     "dist"
