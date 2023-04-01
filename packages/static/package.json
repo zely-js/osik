@@ -1,10 +1,14 @@
 {
   "name": "@osik/static",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./index.d.ts",
   "homepage": "https://github.com/do4ng/osik",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "dependencies": {
     "mime-types": "^2.1.35"
   }
