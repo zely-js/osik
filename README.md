@@ -64,6 +64,32 @@ $ node index.js
 2
 ```
 
+## Routing
+
+Install [@osik/router](./packages/router) before using router,
+
+```
+npm install --save-dev @osik/router
+```
+
+`@osik/router` provides an express-style router.
+
+```ts
+const { osik } = require('osik');
+const { Router } = require('@osik/router');
+
+const app = osik();
+const router = new Router();
+
+router.get('/', (req, res) => {
+  res.body = 'Hello World';
+});
+
+app.use(router.routes());
+
+app.listen(3000);
+```
+
 ## License
 
 MIT
