@@ -61,7 +61,9 @@ export function Static(target: string, options?: StaticOptions): Middleware {
       if (prettyURL(url.pathname) === prettyURL(fileURL.pathname) && !sent) {
         sent = true;
 
-        const mime = lookup(file) || `text/plain; charset=${options?.charset || 'utf-8'}`;
+        let mime = lookup(file);
+
+        if (!mime) mime = `text/plain; charset=${options?.charset || 'utf-8'}`;
 
         res.setHeader('Content-Type', `${mime}; charset=${options?.charset || 'utf-8'}`);
         res.end(readFileSync(join(target, file)));
