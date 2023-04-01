@@ -1,0 +1,16 @@
+{
+  "name": "@osik/router",
+  "version": "0.0.0",
+  "description": "express-style router for osik",
+  "types": "./index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "files": [
+    "index.d.ts",
+    "dist"
+  ],
+  "dependencies": {
+    "@osik/path-regexp": "*",
+    "url-join": "4.0.1"
+  }
+}
