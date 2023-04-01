@@ -1,11 +1,12 @@
 import { IncomingMessage, Server, ServerResponse } from 'http';
 
-import { Middleware, ServerConstructorOptions, ServerOptions } from '$osik/types';
+import { Middleware, ServerConstructorOptions, ServerOptions } from '$osik';
 
 import { defaultServer } from './default';
 
 import {
   MiddlewareBody,
+  MiddlewarePreventFavicon,
   MiddlewareQueryString,
   MiddlewareResponse,
 } from '../middlewares';
@@ -29,6 +30,10 @@ export class OsikServer {
     this.middlewares = [];
 
     this.use(MiddlewareBody, MiddlewareQueryString, MiddlewareResponse);
+
+    if (!this.options.requestFavicon) {
+      this.use(MiddlewarePreventFavicon);
+    }
 
     this.server = this.options.server.createServer((req, res) => {
       this.handle(req, res);
@@ -73,7 +78,7 @@ export class OsikServer {
     loop().then(() => {
       if (this.options.useApi) {
         if (res.writableEnded) {
-          console.error('res.body is ignored because the data has already been sent.');
+          // console.error('res.body is ignored because the data has already been sent.');
         }
 
         const { body } = res as any;

@@ -31,6 +31,7 @@ export interface ServerOptions {
   server?: CustomServer;
   middlewares?: Middleware[];
   useApi?: boolean;
+  requestFavicon?: boolean;
 }
 
 export interface ServerConstructorOptions extends ServerOptions {}

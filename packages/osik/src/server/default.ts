@@ -1,6 +1,6 @@
 import { createServer } from 'http';
 
-import { CustomServer } from '$core/types';
+import { CustomServer } from '$osik';
 
 export function defaultServer(): CustomServer {
   return {
