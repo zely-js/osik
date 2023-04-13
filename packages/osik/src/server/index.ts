@@ -44,7 +44,7 @@ export class OsikServer {
     middlewares.forEach((middleware) => {
       // check is function
       if (typeof middleware !== 'function') {
-        console.error('middleware must be function.');
+        // console.error('middleware must be function.');
       } else {
         this.middlewares.push(middleware);
       }
