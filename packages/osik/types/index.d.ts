@@ -11,8 +11,6 @@ export interface Response extends ServerResponse {
   json: (data: any) => Response;
   send: (data: any) => Response;
   status: (code: number) => Response;
-
-  body: string;
 }
 
 export interface CustomServer {

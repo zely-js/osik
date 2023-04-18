@@ -2,18 +2,19 @@ const m = require('./packages/osik/dist');
 const static = require('./packages/static/dist');
 const { Router } = require('./packages/router/dist');
 
-const app = m.osik();
+const app = m.osik({ useApi: true });
 
 const router = new Router();
 const usersRouter = new Router('/user');
 // router
 
 router.get('/hello', (req, res) => {
-  res.body = 'Hello World!';
+  console.log(req.body);
+  res.send('Hello World!');
 });
 
 usersRouter.get('/:user', (req, res) => {
-  res.body = `Hello ${req.params.user}`;
+  res.send(`Hello ${req.params.user}`);
 });
 
 app.use(router.routes());
@@ -41,6 +42,6 @@ app.use(async (req, res) => {
   res.end('hello');
 });
 
-app.listen(3000, () => {
-  console.log('http://localhost:3000');
+app.listen(4000, () => {
+  console.log('http://localhost:4000');
 });

@@ -20,11 +20,10 @@ const MiddlewareBody: Middleware = (req, res, next) => {
     if (body === '') {
       body = '{}';
     }
-
+    // console.log(body);
     req.body = JSON.parse(body);
+    next();
   });
-
-  next();
 };
 
 export { MiddlewareBody };

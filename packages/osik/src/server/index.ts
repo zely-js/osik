@@ -63,36 +63,12 @@ export class OsikServer {
         const middleware = this.middlewares[(index += 1)];
 
         if (middleware) {
-          (res as any).body = null;
-
           await middleware(req as any, res as any, loop);
-
-          /*
-          res.body = "hello";
-          res.body = { "hello": "world" };
-          */
         }
       }
     };
 
-    loop().then(() => {
-      if (this.options.useApi) {
-        if (res.writableEnded) {
-          // console.error('res.body is ignored because the data has already been sent.');
-        }
-
-        const { body } = res as any;
-
-        if (body) {
-          if (typeof body === 'object') {
-            res.setHeader('Content-Type', 'text/json');
-            res.end(JSON.stringify(body));
-          } else {
-            res.end(body);
-          }
-        }
-      }
-    });
+    loop();
   }
 
   listen(port: number, callback?: () => void | Promise<void>) {

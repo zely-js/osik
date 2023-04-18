@@ -12,7 +12,7 @@ Inspired by koa, only middleware is supported by default, but the handler of thi
 const app = require('osik')();
 
 app.use((req, res, next) => {
-  res.body = 'Hello World!';
+  res.end('Hello World!');
 });
 
 app.listen(3000);
@@ -52,7 +52,7 @@ app.use(async (req, res) => {
 
   console.log('1');
 
-  res.body = 'Hello World!';
+  res.end('Hello World!');
 });
 ```
 
@@ -82,7 +82,7 @@ const app = osik();
 const router = new Router();
 
 router.get('/', (req, res) => {
-  res.body = 'Hello World';
+  res.end('Hello World!');
 });
 
 app.use(router.routes());
