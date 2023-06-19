@@ -1,6 +1,6 @@
 {
   "name": "@osik/router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "express-style router for osik",
   "types": "./index.d.ts",
   "main": "./dist/index.js",

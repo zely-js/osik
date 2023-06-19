@@ -1,5 +1,5 @@
 import 'osik';
-import { Middleware } from 'osik';
+import { Middleware, Request, Response } from 'osik';
 
 declare module 'osik' {
   export interface Request {
