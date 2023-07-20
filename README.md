@@ -9,10 +9,12 @@ Inspired by koa, only middleware is supported by default, but the handler of thi
 ---
 
 ```ts
-const app = require('osik')();
+const { osik } = require('osik');
+
+const app = osik();
 
 app.use((req, res, next) => {
-  res.end('Hello World!');
+  res.body = 'Hello World!';
 });
 
 app.listen(3000);
